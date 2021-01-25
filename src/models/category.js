@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require('bcrypt');
-const categoryShema = new mongoose.Schema(
+const categorySchema = new mongoose.Schema(
     {
         name: {
             type: String,
@@ -17,7 +17,11 @@ const categoryShema = new mongoose.Schema(
             unique: true,
 
         },
-        parentid: {
+        categoryImage: {
+            type: String,
+        }
+        ,
+        parentId: {
             type: String
         }
     }, {
@@ -27,4 +31,4 @@ const categoryShema = new mongoose.Schema(
 
 
 
-module.exports = mongoose.model('User', userShema);
+module.exports = mongoose.model('Category', categorySchema);
